@@ -36,7 +36,11 @@ MAX_ROWS.times do |row|
 
     text_area_window.setpos(2, 0)
     if time.zero? && row.zero?
-      text_area_window.addstr("THE TERMINAL TIMES. \nBREAKING NEWS. \nYOU NEED TO KNOW.")
+      text_area_window.attron(Curses::A_BOLD)
+      text_area_window.addstr("THE TERMINAL TIMES. \n")
+      text_area_window.addstr("BREAKING NEWS. \n")
+      text_area_window.attron(Curses::A_UNDERLINE)
+      text_area_window.addstr("YOU NEED TO KNOW.")
     else
       text_area_window.addstr(my_str)
     end
